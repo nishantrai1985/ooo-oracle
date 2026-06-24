@@ -176,6 +176,13 @@ export default function App() {
   const [musicOn, setMusicOn] = useState(false);
   const audioCtxRef = useRef<AudioContext | null>(null);
   const stopAudioRef = useRef<(() => void) | null>(null);
+  const dateInputRef = useRef<HTMLInputElement>(null);
+
+  const openDatePicker = () => {
+    const el = dateInputRef.current;
+    if (!el) return;
+    try { el.showPicker(); } catch { el.click(); }
+  };
 
   const toggleMusic = () => {
     if (musicOn) {
@@ -412,7 +419,11 @@ export default function App() {
                 <div>
                   <label htmlFor="returnDate" className="eric-label">Return Date</label>
                   <div style={{ position: 'relative' }}>
-                    <div className="eric-input" style={{ display: 'flex', alignItems: 'center', gap: '8px', pointerEvents: 'none' }}>
+                    <div
+                      className="eric-input"
+                      onClick={openDatePicker}
+                      style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}
+                    >
                       <span style={{ flex: 1, color: form.returnDate ? '#2A3850' : '#9BAEC4' }}>
                         {form.returnDate
                           ? new Date(form.returnDate + 'T12:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'long' })
@@ -423,6 +434,7 @@ export default function App() {
                       </svg>
                     </div>
                     <input
+                      ref={dateInputRef}
                       id="returnDate"
                       type="date"
                       value={form.returnDate}
@@ -430,11 +442,7 @@ export default function App() {
                       required
                       disabled={phase === 'loading'}
                       min={new Date().toISOString().split('T')[0]}
-                      style={{
-                        position: 'absolute', inset: 0,
-                        width: '100%', height: '100%',
-                        opacity: 0, cursor: 'pointer', zIndex: 1,
-                      }}
+                      style={{ position: 'absolute', opacity: 0, width: '1px', height: '1px', pointerEvents: 'none' }}
                     />
                   </div>
                 </div>
