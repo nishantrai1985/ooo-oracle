@@ -10,10 +10,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 app.use(express.json());
 
-// Serve Vite build in production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(join(__dirname, 'dist')));
-}
+// Serve Vite build (dist/ exists after npm run build; harmless if absent in dev)
+app.use(express.static(join(__dirname, 'dist')));
 
 // ─── Provider detection ─────────────────────────────────────────────────────
 const PROVIDER = (process.env.AI_PROVIDER || 'anthropic').toLowerCase();
@@ -262,11 +260,9 @@ app.get('/api/health', (_req, res) => {
 });
 
 // SPA fallback — must be after all API routes
-if (process.env.NODE_ENV === 'production') {
-  app.get('*', (_req, res) => {
-    res.sendFile(join(__dirname, 'dist', 'index.html'));
-  });
-}
+app.get('*', (_req, res, next) => {
+  res.sendFile(join(__dirname, 'dist', 'index.html'), err => err ? next() : undefined);
+});
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
