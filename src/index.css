@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --eric-blue: #0082F0;
+    --eric-blue-hover: #0062BC;
+    --eric-navy: #001C3D;
+    --summer-sun: #FFB300;
+    --summer-coral: #FF5140;
+    --summer-teal: #00BDD4;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: #EEF3FB;
+    color: #1A2740;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23FFB300'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23FFD740'/%3E%3Cg stroke='%23FF8C00' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='16' y1='2' x2='16' y2='7'/%3E%3Cline x1='16' y1='25' x2='16' y2='30'/%3E%3Cline x1='2' y1='16' x2='7' y2='16'/%3E%3Cline x1='25' y1='16' x2='30' y2='16'/%3E%3Cline x1='6' y1='6' x2='9.5' y2='9.5'/%3E%3Cline x1='22.5' y1='22.5' x2='26' y2='26'/%3E%3Cline x1='26' y1='6' x2='22.5' y2='9.5'/%3E%3Cline x1='9.5' y1='22.5' x2='6' y2='26'/%3E%3C/g%3E%3C/svg%3E") 16 16, auto;
+  }
+
+  ::selection {
+    background: rgba(0, 130, 240, 0.15);
+    color: #001C3D;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #EEF3FB; }
+  ::-webkit-scrollbar-thumb { background: #B8CCE8; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #0082F0; }
+}
+
+@layer components {
+  /* ——— Inputs ——— */
+  .eric-input {
+    width: 100%;
+    border: 1.5px solid #D0DCF0;
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    background: #FFFFFF;
+    color: #1A2740;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    outline: none;
+    line-height: 1.4;
+  }
+
+  .eric-input::placeholder { color: #9BAEC4; }
+
+  .eric-input:focus {
+    border-color: #0082F0;
+    box-shadow: 0 0 0 3px rgba(0, 130, 240, 0.14);
+  }
+
+  .eric-input:disabled {
+    background: #F4F7FC;
+    color: #9BAEC4;
+    cursor: not-allowed;
+  }
+
+  /* ——— Labels ——— */
+  .eric-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: #5A6E8A;
+    margin-bottom: 7px;
+  }
+
+  /* ——— Cards ——— */
+  .eric-card {
+    background: #FFFFFF;
+    border-radius: 6px;
+    border: 1px solid #D8E4F4;
+    box-shadow: 0 2px 12px rgba(0, 50, 122, 0.07);
+  }
+
+  /* ——— Primary CTA Button ——— */
+  .eric-btn-primary {
+    background: #0082F0;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    padding: 16px 32px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: background 0.15s, box-shadow 0.15s, transform 0.1s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .eric-btn-primary:hover:not(:disabled) {
+    background: #0062BC;
+    box-shadow: 0 4px 20px rgba(0, 130, 240, 0.35);
+    transform: translateY(-1px);
+  }
+
+  .eric-btn-primary:active:not(:disabled) { transform: translateY(0); }
+  .eric-btn-primary:disabled { opacity: 0.45; cursor: not-allowed; }
+
+  /* ——— Secondary Buttons ——— */
+  .eric-btn-ghost {
+    background: transparent;
+    color: #0082F0;
+    border: 1.5px solid #0082F0;
+    border-radius: 4px;
+    padding: 9px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .eric-btn-ghost:hover:not(:disabled) { background: rgba(0, 130, 240, 0.06); }
+  .eric-btn-ghost:disabled { opacity: 0.45; cursor: not-allowed; }
+
+  .eric-btn-neutral {
+    background: #F0F5FF;
+    color: #445068;
+    border: 1.5px solid #D0DCF0;
+    border-radius: 4px;
+    padding: 9px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .eric-btn-neutral:hover:not(:disabled) {
+    background: #E4EDF8;
+    border-color: #B8CCE8;
+  }
+
+  /* ——— Ericsson top nav bar ——— */
+  .eric-nav {
+    background: #001C3D;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+  }
+
+  /* ——— Section heading ——— */
+  .eric-section-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #5A6E8A;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .eric-section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #D8E4F4;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+  .animate-slide-up { animation: slideUp 0.4s ease-out forwards; }
+}
+
+/* ——— Hero section ——— */
+.hero-bg {
+  background: linear-gradient(160deg, #001C3D 0%, #003875 45%, #0062BC 80%, #0082F0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Moving ocean gradient overlay */
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 75% 60%, rgba(0,189,212,0.18) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 80%, rgba(255,179,0,0.12) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ——— Streaming cursor ——— */
+.cursor-blink::after {
+  content: '|';
+  animation: cursorBlink 0.7s step-start infinite;
+  color: #0082F0;
+  margin-left: 1px;
+  font-weight: 300;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ——— Personality card ——— */
+.persona-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+}
+
+.persona-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 50, 122, 0.12);
+}
+
+/* ——— Wave divider ——— */
+.wave-fill { fill: #EEF3FB; }
+
+@keyframes waveSlide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ——— Reduced motion ——— */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ——— Share card (html2canvas) ——— */
+.share-card-bg {
+  background: linear-gradient(135deg, #001C3D 0%, #00427A 50%, #0062BC 100%);
+  font-family: 'DM Sans', sans-serif;
+}
