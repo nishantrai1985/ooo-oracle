@@ -13,26 +13,26 @@ interface FormState {
 
 type AppPhase = 'form' | 'loading' | 'result';
 
-/* ——— Ericsson Logo SVG ——— */
-function EricssonLogo({ className }: { className?: string }) {
+/* ——— Oracle crystal ball icon ——— */
+function OracleIcon({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 120 22"
+      viewBox="0 0 22 27"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      aria-label="Ericsson"
+      aria-label="OOO Oracle"
     >
-      <text
-        x="0" y="18"
-        fontFamily="'DM Sans', system-ui, sans-serif"
-        fontWeight="800"
-        fontSize="20"
-        fill="currentColor"
-        letterSpacing="1"
-      >
-        ERICSSON
-      </text>
+      {/* Glass sphere */}
+      <circle cx="11" cy="10" r="9" stroke="currentColor" strokeWidth="1.5" fill="currentColor" fillOpacity="0.12"/>
+      {/* Top-left shine highlight */}
+      <ellipse cx="7.5" cy="6" rx="2.6" ry="1.7" fill="currentColor" fillOpacity="0.38" transform="rotate(-25 7.5 6)"/>
+      {/* Subtle inner sparkle dot */}
+      <circle cx="14" cy="12.5" r="1.1" fill="currentColor" fillOpacity="0.28"/>
+      {/* Stem */}
+      <line x1="11" y1="19" x2="11" y2="22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      {/* Base */}
+      <line x1="5" y1="25" x2="17" y2="25" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
     </svg>
   );
 }
@@ -277,7 +277,7 @@ export default function App() {
       <nav className="eric-nav">
         {/* Logo */}
         <a href="/" className="flex items-center gap-3 no-underline flex-shrink-0">
-          <EricssonLogo className="h-5 text-white w-auto" />
+          <OracleIcon className="h-5 text-white w-auto" />
         </a>
 
         {/* Divider */}
@@ -611,7 +611,7 @@ export default function App() {
       >
         <div className="max-w-2xl mx-auto flex items-center justify-center">
           <div className="flex items-center gap-3">
-            <EricssonLogo className="h-4 text-white w-auto opacity-70" />
+            <OracleIcon className="h-4 text-white w-auto opacity-70" />
             <span style={{ color: 'rgba(255,255,255,0.25)', fontSize: '12px' }}>·</span>
             <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '12px' }}>☀ Summer 2026</span>
           </div>
