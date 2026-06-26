@@ -72,5 +72,74 @@ export default function PersonaIcon({ personaKey, size = 36 }: Props) {
           <line x1="10" y1="20" x2="19" y2="20" stroke="#6348AA" strokeWidth="1.5" strokeLinecap="round" opacity="0.35"/>
         </svg>
       );
+
+    case 'swdev':
+      return (
+        <svg aria-hidden="true" width={size} height={size} viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Terminal window frame */}
+          <rect x="3" y="5" width="30" height="26" rx="3" stroke="#2D6B4A" strokeWidth="2"/>
+          {/* Title bar */}
+          <line x1="3" y1="12" x2="33" y2="12" stroke="#2D6B4A" strokeWidth="1.5" opacity="0.4"/>
+          {/* Window dots */}
+          <circle cx="8" cy="8.5" r="1.3" fill="#2D6B4A" opacity="0.4"/>
+          <circle cx="12.5" cy="8.5" r="1.3" fill="#2D6B4A" opacity="0.4"/>
+          {/* > chevron prompt */}
+          <path d="M8 21 L14 17.5 L8 14" stroke="#2D6B4A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          {/* _ cursor */}
+          <line x1="17" y1="21" x2="24" y2="21" stroke="#2D6B4A" strokeWidth="2" strokeLinecap="round"/>
+        </svg>
+      );
+
+    case 'productleader':
+      return (
+        <svg aria-hidden="true" width={size} height={size} viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Compass circle */}
+          <circle cx="18" cy="18" r="13" stroke="#8B3A9E" strokeWidth="2"/>
+          {/* North arrow (bold — the north star) */}
+          <path d="M18 5 L18 14" stroke="#8B3A9E" strokeWidth="2.5" strokeLinecap="round"/>
+          <path d="M14.5 10 L18 5 L21.5 10" fill="#8B3A9E"/>
+          {/* South (faint) */}
+          <line x1="18" y1="22" x2="18" y2="31" stroke="#8B3A9E" strokeWidth="1.5" strokeLinecap="round" opacity="0.3"/>
+          {/* East (faint) */}
+          <line x1="22" y1="18" x2="31" y2="18" stroke="#8B3A9E" strokeWidth="1.5" strokeLinecap="round" opacity="0.3"/>
+          {/* West (faint) */}
+          <line x1="5" y1="18" x2="14" y2="18" stroke="#8B3A9E" strokeWidth="1.5" strokeLinecap="round" opacity="0.3"/>
+          {/* Centre dot */}
+          <circle cx="18" cy="18" r="2.2" fill="#8B3A9E"/>
+        </svg>
+      );
+
+    case 'projectmanager':
+      return (
+        <svg aria-hidden="true" width={size} height={size} viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Clipboard */}
+          <rect x="5" y="6" width="26" height="26" rx="2" stroke="#B8400B" strokeWidth="2"/>
+          <rect x="13" y="3" width="10" height="6" rx="1.5" stroke="#B8400B" strokeWidth="1.5" fill="white"/>
+          {/* Row 1 — checked */}
+          <rect x="9" y="14" width="5.5" height="5.5" rx="1" fill="#B8400B"/>
+          <path d="M10 16.8 L11.5 18.2 L14.5 14.8" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <line x1="17.5" y1="16.8" x2="27" y2="16.8" stroke="#B8400B" strokeWidth="1.5" strokeLinecap="round"/>
+          {/* Row 2 — checked */}
+          <rect x="9" y="22" width="5.5" height="5.5" rx="1" fill="#B8400B"/>
+          <path d="M10 24.8 L11.5 26.2 L14.5 22.8" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <line x1="17.5" y1="24.8" x2="27" y2="24.8" stroke="#B8400B" strokeWidth="1.5" strokeLinecap="round"/>
+        </svg>
+      );
+
+    case 'dataspecialist':
+      return (
+        <svg aria-hidden="true" width={size} height={size} viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Bar 1 — short */}
+          <rect x="4" y="24" width="7" height="8" rx="1" fill="#1A5F9E" opacity="0.45"/>
+          {/* Bar 2 — medium */}
+          <rect x="14.5" y="16" width="7" height="16" rx="1" fill="#1A5F9E" opacity="0.7"/>
+          {/* Bar 3 — tall */}
+          <rect x="25" y="8" width="7" height="24" rx="1" fill="#1A5F9E"/>
+          {/* Baseline */}
+          <line x1="2" y1="32" x2="34" y2="32" stroke="#1A5F9E" strokeWidth="2" strokeLinecap="round"/>
+          {/* Trend line */}
+          <path d="M7.5 24 L18 16 L28.5 8" stroke="#1A5F9E" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="2.5 2" opacity="0.45"/>
+        </svg>
+      );
   }
 }

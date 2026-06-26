@@ -1,4 +1,4 @@
-export type PersonalityKey = 'uxdesigner' | 'servicedesigner' | 'frontend' | 'designmanager' | 'researcher';
+export type PersonalityKey = 'uxdesigner' | 'servicedesigner' | 'frontend' | 'designmanager' | 'researcher' | 'swdev' | 'productleader' | 'projectmanager' | 'dataspecialist';
 
 export type ToneKey = 'formal' | 'playful' | 'unhinged' | 'poetic' | 'corporate';
 
@@ -72,5 +72,41 @@ export const PERSONALITIES: Personality[] = [
     accentColor: '#6348AA',
     badgeBg: 'rgba(99, 72, 170, 0.08)',
     badgeText: '#523B8F',
+  },
+  {
+    key: 'swdev',
+    name: 'Software Developer',
+    tagline: 'Finally. Zero Jira notifications for 2 weeks.',
+    description: 'On a beach with no PRs to review. For now.',
+    accentColor: '#2D6B4A',
+    badgeBg: 'rgba(45, 107, 74, 0.08)',
+    badgeText: '#1F4E35',
+  },
+  {
+    key: 'productleader',
+    name: 'Product Leader',
+    tagline: 'Left the roadmap in safe hands. Allegedly.',
+    description: 'Vision: remote. Strategy: relaxed.',
+    accentColor: '#8B3A9E',
+    badgeBg: 'rgba(139, 58, 158, 0.08)',
+    badgeText: '#6B2C7A',
+  },
+  {
+    key: 'projectmanager',
+    name: 'Project Manager',
+    tagline: 'All action items are assigned. I checked twice.',
+    description: 'Dependencies resolved. OOO is go-live.',
+    accentColor: '#B8400B',
+    badgeBg: 'rgba(184, 64, 11, 0.08)',
+    badgeText: '#8F3008',
+  },
+  {
+    key: 'dataspecialist',
+    name: 'Data Specialist',
+    tagline: 'Statistically, I needed this holiday.',
+    description: 'Sample size of one. Margin of error: irrelevant.',
+    accentColor: '#1A5F9E',
+    badgeBg: 'rgba(26, 95, 158, 0.08)',
+    badgeText: '#0F4A7A',
   },
 ];
